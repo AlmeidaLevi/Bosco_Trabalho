@@ -37,7 +37,12 @@ public abstract class Obra {
     }
 
     public double mediaAvaliacoes() {
-        return 0.1;
+        int media = 0;
+        for (Avaliacao i : this.avaliacoes){
+            media += i.getNota();
+        }
+        media /= this.avaliacoes.size();
+        return media;
     }
 
     public abstract String exibirDetalhes();
