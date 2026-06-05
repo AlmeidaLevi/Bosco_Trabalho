@@ -6,7 +6,7 @@ public class Avaliacao {
     private int nota;
     private String comentario;
 
-    public Avaliacao(String usuario, int nota, String comentario){
+    public Avaliacao(String usuario, int nota, String comentario) throws ObraJaCadastradaException{
         if (nota > 10 || nota < 0){
             throw new ObraJaCadastradaException("A nota deve estar entre 0 e 10");
         }
