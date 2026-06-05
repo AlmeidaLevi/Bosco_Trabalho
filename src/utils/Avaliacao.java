@@ -1,4 +1,4 @@
-package src;
+package src.utils;
 import src.excecoes.ObraJaCadastradaException;
 
 public class Avaliacao {

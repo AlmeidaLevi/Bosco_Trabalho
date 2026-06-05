@@ -1,4 +1,4 @@
-package src;
+package src.repositorios;
 
 import java.util.Vector;
 import src.excecoes.ObraJaCadastradaException;

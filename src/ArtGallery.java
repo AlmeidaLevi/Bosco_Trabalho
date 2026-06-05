@@ -8,6 +8,8 @@ import src.excecoes.ObraNaoEncontradaException;
 import src.interfaces.IArtGallery;
 import src.interfaces.IRepositorioObra;
 import src.tipos_obra.Obra;
+import src.utils.Avaliacao;
+import src.utils.Exposicao;
 
 
 public class ArtGallery implements IArtGallery {
@@ -33,7 +35,7 @@ public class ArtGallery implements IArtGallery {
     @Override
     public void avaliarObra(String titulo, Avaliacao avaliacao) throws ObraNaoEncontradaException{
         Obra buscarObra = repositorio.buscar(titulo);
-        if(buscarObra == null){
+        if(buscarObra == null || !buscarObra.isAtiva()){
             throw new ObraNaoEncontradaException("Obra " + titulo + " não encontrada!!");
         }
         buscarObra.adicionarAvaliacao(avaliacao);
@@ -79,6 +81,10 @@ public class ArtGallery implements IArtGallery {
             throw new ExposicaoNaoEncontradaException("Exposição " + nomeExposicao + " não encontrada");
         }
         return exposicao.listarObras();
+    }
+
+    public void adicionarExposicao(Exposicao exposicao){
+        this.exposicoes.add(exposicao);
     }
 
 }
