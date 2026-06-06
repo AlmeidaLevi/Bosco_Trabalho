@@ -4,7 +4,7 @@ public class ArteGenerativa extends Obra{
     private String algoritmo;
     private long seed;
 
-    public ArteGenerativa(String titulo, String autor, String algoritmo, long seed){
+    public ArteGenerativa(String titulo, String autor, long seed, String algoritmo){
         super(titulo, autor);
         this.algoritmo = algoritmo;
         this.seed = seed;
