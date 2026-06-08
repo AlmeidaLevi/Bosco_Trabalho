@@ -11,9 +11,9 @@ public interface IArtGallery {
 
     public void publicarObra(Obra obra) throws ObraJaCadastradaException;
 
-    public void removerObra(String titulo);
+    public void removerObra(String titulo, String autor) throws ObraNaoEncontradaException;
 
-    public void avaliarObra(String titulo, Avaliacao avaliacao) throws ObraNaoEncontradaException;
+    public void avaliarObra(Obra obra, Avaliacao avaliacao) throws ObraNaoEncontradaException;
 
     public Vector<Obra> listarObras();
 

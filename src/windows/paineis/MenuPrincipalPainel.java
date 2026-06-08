@@ -6,8 +6,8 @@ import java.awt.CardLayout;
 
 public class MenuPrincipalPainel extends JPanel{
     public MenuPrincipalPainel(JPanel container, CardLayout layout){
-        JButton botao = new JButton("Adicionar Obra");
-        botao.addActionListener(e -> layout.show(container, "Adicionar Obra"));
+        JButton botao = new JButton("Publicar Obra");
+        botao.addActionListener(e -> layout.show(container, "Publicar Obra"));
         add(botao);
     }
 }

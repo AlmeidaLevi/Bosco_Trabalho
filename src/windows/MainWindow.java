@@ -4,7 +4,7 @@ import java.awt.CardLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import src.interfaces.IArtGallery;
-import src.windows.paineis.AdicionarObraPainel;
+import src.windows.paineis.PublicarObraPainel;
 import src.windows.paineis.MenuPrincipalPainel;
 
 public class MainWindow extends JFrame{
@@ -13,7 +13,7 @@ public class MainWindow extends JFrame{
         JPanel container = new JPanel(layout);
 
         container.add(new MenuPrincipalPainel(container, layout), "Menu Principal");
-        container.add(new AdicionarObraPainel(container, layout, galeria), "Adicionar Obra");
+        container.add(new PublicarObraPainel(container, layout, galeria), "Publicar Obra");
 
         add(container);
 

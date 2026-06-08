@@ -8,11 +8,11 @@ public interface IRepositorioObra {
 
     public void cadastrar(Obra obra) throws ObraJaCadastradaException;
 
-    public Obra buscar(String titulo);
+    public Vector<Obra> buscar(String titulo);
 
     public void atualizar(Obra obra) throws ObraNaoEncontradaException;
 
-    public void remover(String titulo);
+    public void remover(String titulo, String autor) throws ObraNaoEncontradaException;
 
     public Vector<Obra> listar();
 

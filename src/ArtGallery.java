@@ -28,17 +28,26 @@ public class ArtGallery implements IArtGallery {
     }
 
     @Override
-    public void removerObra(String titulo) {
-        repositorio.remover(titulo);
+    public void removerObra(String titulo, String autor) throws ObraNaoEncontradaException {
+        repositorio.remover(titulo, autor);
     }
 
     @Override
-    public void avaliarObra(String titulo, Avaliacao avaliacao) throws ObraNaoEncontradaException{
-        Obra buscarObra = repositorio.buscar(titulo);
-        if(buscarObra == null || !buscarObra.isAtiva()){
-            throw new ObraNaoEncontradaException("Obra " + titulo + " não encontrada!!");
+    public void avaliarObra(Obra obra, Avaliacao avaliacao) throws ObraNaoEncontradaException{
+        Vector<Obra> buscarObra = repositorio.buscar(obra.getTitulo());
+
+        if(buscarObra == null){
+            throw new ObraNaoEncontradaException("Obra " + obra.getTitulo() + " do " + obra.getAutor() +" não foi encontrada!!");
         }
-        buscarObra.adicionarAvaliacao(avaliacao);
+
+        for(Obra o: buscarObra){
+            if(o.getAutor() == obra.getAutor()){
+                o.adicionarAvaliacao(avaliacao);
+                return;
+            }
+        }
+
+        throw new ObraNaoEncontradaException("Obra " + obra.getTitulo() + " do " + obra.getAutor() +" não foi encontrada!!");
 
     }
 

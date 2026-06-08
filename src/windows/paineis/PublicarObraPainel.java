@@ -13,7 +13,7 @@ import src.tipos_obra.Modelagem3D;
 import src.tipos_obra.Obra;
 import src.tipos_obra.PinturaDigital;
 
-public class AdicionarObraPainel extends JPanel{
+public class PublicarObraPainel extends JPanel{
     private IArtGallery galeria;
 
     private JButton botao_voltar;
@@ -32,7 +32,7 @@ public class AdicionarObraPainel extends JPanel{
     private JPanel painelModelagem3D;
     private JPanel painelArteGenerativa;
 
-    public AdicionarObraPainel(JPanel container, CardLayout layout, IArtGallery galeria){
+    public PublicarObraPainel(JPanel container, CardLayout layout, IArtGallery galeria){
         this.galeria = galeria;
 
         // Criando os botões
