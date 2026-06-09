@@ -5,7 +5,11 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JPanel;
+import javax.swing.JComboBox;
 import src.excecoes.ObraJaCadastradaException;
 import src.interfaces.IArtGallery;
 import src.tipos_obra.ArteGenerativa;
@@ -16,8 +20,8 @@ import src.tipos_obra.PinturaDigital;
 public class PublicarObraPainel extends JPanel{
     private IArtGallery galeria;
 
-    private JButton botao_voltar;
-    private JButton botao_adicionar;
+    private JButton botaoVoltar;
+    private JButton botaoAdicionar;
 
     private JLabel titulo;
     private JTextField campoTitulo;
@@ -36,14 +40,15 @@ public class PublicarObraPainel extends JPanel{
         this.galeria = galeria;
 
         // Criando os botões
-        this.botao_voltar = new JButton("Voltar");
-        botao_voltar.addActionListener(e -> layout.show(container, "Menu Principal"));
+        this.botaoVoltar = new JButton("Voltar");
+        botaoVoltar.addActionListener(e -> layout.show(container, "Menu Principal"));
 
-        botao_adicionar = new JButton("Adicionar");
+        botaoAdicionar = new JButton("Adicionar");
+        botaoAdicionar.addActionListener(e -> this.adicionarObra());
 
         JPanel botoes = new JPanel();
-        botoes.add(botao_voltar);
-        botoes.add(botao_adicionar);
+        botoes.add(botaoVoltar);
+        botoes.add(botaoAdicionar);
 
         // Criando componentes do formulario
         this.titulo = new JLabel("Titulo: ");
@@ -86,7 +91,6 @@ public class PublicarObraPainel extends JPanel{
             );
         });
 
-        botao_adicionar.addActionListener(e -> this.adicionarObra());
 
 
         // Ajustando o layout

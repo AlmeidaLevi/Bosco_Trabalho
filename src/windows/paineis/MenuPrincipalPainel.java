@@ -3,11 +3,29 @@ package src.windows.paineis;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.CardLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 
 public class MenuPrincipalPainel extends JPanel{
     public MenuPrincipalPainel(JPanel container, CardLayout layout){
-        JButton botao = new JButton("Publicar Obra");
-        botao.addActionListener(e -> layout.show(container, "Publicar Obra"));
-        add(botao);
+
+        JButton botaoPublicarObra = new JButton("Publicar Obra");
+        botaoPublicarObra.addActionListener(e -> layout.show(container, "Publicar Obra"));
+
+        JButton botaoRemoverObra = new JButton("Remover Obra");
+        botaoRemoverObra.addActionListener(e -> layout.show(container, "Remover Obra"));
+
+        setLayout(new GridBagLayout());
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(5, 5, 5, 5);
+
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        add(botaoPublicarObra, gbc);
+
+        gbc.gridy = 1;
+        add(botaoRemoverObra, gbc);
     }
 }

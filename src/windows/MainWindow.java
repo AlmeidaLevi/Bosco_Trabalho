@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import src.interfaces.IArtGallery;
 import src.windows.paineis.PublicarObraPainel;
+import src.windows.paineis.RemoverObraPainel;
 import src.windows.paineis.MenuPrincipalPainel;
 
 public class MainWindow extends JFrame{
@@ -14,6 +15,7 @@ public class MainWindow extends JFrame{
 
         container.add(new MenuPrincipalPainel(container, layout), "Menu Principal");
         container.add(new PublicarObraPainel(container, layout, galeria), "Publicar Obra");
+        container.add(new RemoverObraPainel(container, layout, galeria), "Remover Obra");
 
         add(container);
 
