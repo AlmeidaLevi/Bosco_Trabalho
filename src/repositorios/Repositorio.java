@@ -88,4 +88,14 @@ public class Repositorio implements IRepositorioObra{
         return autorObras;
     }
 
+    @Override
+    public Obra buscarObra(String titulo, String autor) throws ObraNaoEncontradaException{
+        Vector<Obra> obrasEncontradas = this.buscar(titulo);
+        for(Obra o: obrasEncontradas){
+            if(o.getAutor().equals(autor)){
+                return o;
+            }
+        }
+        throw new ObraNaoEncontradaException("A obra " + titulo + " do " + autor + " não foi encontrada!!");
+    }
 }

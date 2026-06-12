@@ -18,4 +18,6 @@ public interface IRepositorioObra {
 
     public Vector<Obra> listarPorAutor(String autor);
 
+    public Obra buscarObra(String titulo, String autor) throws ObraNaoEncontradaException;
+
 }
