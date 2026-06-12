@@ -96,4 +96,13 @@ public class ArtGallery implements IArtGallery {
         this.exposicoes.add(exposicao);
     }
 
+    @Override
+    public Obra buscarObra(String titulo, String autor){
+        try{
+            Obra obra = repositorio.buscarObra(titulo, autor);
+            return obra;
+        } catch (ObraNaoEncontradaException e){
+            return null;
+        }
+    }
 }

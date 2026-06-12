@@ -23,4 +23,5 @@ public interface IArtGallery {
 
     public Vector<Obra> obrasExpostas(String nomeExposicao) throws ExposicaoNaoEncontradaException;
 
+    public Obra buscarObra(String titulo, String autor);
 }
