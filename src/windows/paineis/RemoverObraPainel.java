@@ -1,5 +1,11 @@
 package src.windows.paineis;
 
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -8,17 +14,12 @@ import javax.swing.JTextField;
 import src.excecoes.ObraNaoEncontradaException;
 import src.interfaces.IArtGallery;
 
-import java.awt.CardLayout;
-import java.awt.Color;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-
 public class RemoverObraPainel extends JPanel{
     private JLabel mensagemAviso = new JLabel("");
+    private IArtGallery galeria;
 
     public RemoverObraPainel(JPanel container, CardLayout layout, IArtGallery galeria){
-
+        this.galeria = galeria;
         JLabel titulo = new JLabel("Titulo: ");
         JTextField campoTitulo = new JTextField(60);
 
@@ -26,7 +27,7 @@ public class RemoverObraPainel extends JPanel{
         JTextField campoAutor = new JTextField(60);
 
         JButton botaoRemover = new JButton("Remover obra");
-        botaoRemover.addActionListener(e -> this.RemoverObra(campoTitulo.getText(), campoAutor.getText(), galeria));
+        botaoRemover.addActionListener(e -> this.RemoverObra(campoTitulo.getText(), campoAutor.getText()));
 
         JButton botaoVoltar = new JButton("Voltar");
         botaoVoltar.addActionListener(e -> layout.show(container, "Menu Principal"));
@@ -65,9 +66,9 @@ public class RemoverObraPainel extends JPanel{
 
     }
 
-    public void RemoverObra(String titulo, String autor, IArtGallery galeria) {
+    public void RemoverObra(String titulo, String autor) {
         try {
-            galeria.removerObra(titulo, autor);
+            this.galeria.removerObra(titulo, autor);
             this.mensagemAviso.setText("A obra foi removida com sucesso!");
             this.mensagemAviso.setForeground(Color.GREEN);
         } catch( ObraNaoEncontradaException e){

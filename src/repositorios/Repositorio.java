@@ -1,6 +1,7 @@
 package src.repositorios;
 
 import java.util.Vector;
+
 import src.excecoes.ObraJaCadastradaException;
 import src.excecoes.ObraNaoEncontradaException;
 import src.interfaces.IRepositorioObra;
@@ -18,7 +19,7 @@ public class Repositorio implements IRepositorioObra{
             return;
         }
         for (Obra o: buscarObra){
-            if (o.getAutor() == obra.getAutor()) {
+            if (o.getAutor().equals(obra.getAutor())) {
                 throw new ObraJaCadastradaException("A obra " + obra.getTitulo() + " do " + obra.getAutor() + "já foi cadastrada!!\n");
             }
         }
@@ -47,7 +48,7 @@ public class Repositorio implements IRepositorioObra{
         }
         int indice = -1;
         for(Obra o : buscarObra){
-            if(o.getAutor() == obra.getAutor() && o.getTitulo() == obra.getTitulo())
+            if(o.getAutor().equals(obra.getAutor()) && o.getTitulo().equals(obra.getTitulo()))
                 indice = this.obras.indexOf(o);
         }
         if(indice == -1){
@@ -63,7 +64,7 @@ public class Repositorio implements IRepositorioObra{
             throw new ObraNaoEncontradaException("A obra " + titulo + " do " + autor + " não foi encontrada!!");
         }
         for(Obra obra : buscarObra){
-            if(obra.getAutor() == autor){
+            if(obra.getAutor().equals(autor)){
                 this.obras.remove(obra);
                 return;
             }
