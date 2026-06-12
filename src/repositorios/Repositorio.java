@@ -5,7 +5,7 @@ import java.util.Vector;
 import src.excecoes.ObraJaCadastradaException;
 import src.excecoes.ObraNaoEncontradaException;
 import src.interfaces.IRepositorioObra;
-import src.tipos_obra.Obra;
+import src.tiposObra.Obra;
 
 public class Repositorio implements IRepositorioObra{
 

@@ -12,10 +12,10 @@ import javax.swing.JPanel;
 import javax.swing.JComboBox;
 import src.excecoes.ObraJaCadastradaException;
 import src.interfaces.IArtGallery;
-import src.tipos_obra.ArteGenerativa;
-import src.tipos_obra.Modelagem3D;
-import src.tipos_obra.Obra;
-import src.tipos_obra.PinturaDigital;
+import src.tiposObra.ArteGenerativa;
+import src.tiposObra.Modelagem3D;
+import src.tiposObra.Obra;
+import src.tiposObra.PinturaDigital;
 
 public class PublicarObraPainel extends JPanel{
     private IArtGallery galeria;

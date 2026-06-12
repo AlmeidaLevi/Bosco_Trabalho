@@ -7,7 +7,7 @@ import src.excecoes.ObraJaCadastradaException;
 import src.excecoes.ObraNaoEncontradaException;
 import src.interfaces.IArtGallery;
 import src.interfaces.IRepositorioObra;
-import src.tipos_obra.Obra;
+import src.tiposObra.Obra;
 import src.utils.Avaliacao;
 import src.utils.Exposicao;
 

@@ -1,4 +1,4 @@
-package src.tipos_obra;
+package src.tiposObra;
 
 import java.util.Vector;
 import src.utils.Avaliacao;

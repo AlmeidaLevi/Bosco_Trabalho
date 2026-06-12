@@ -1,4 +1,4 @@
-package src.tipos_obra;
+package src.tiposObra;
 
 public class Modelagem3D extends Obra{
     private int numeroPoligonos;

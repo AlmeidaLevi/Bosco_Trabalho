@@ -1,4 +1,4 @@
-package src.tipos_obra;
+package src.tiposObra;
 
 public class PinturaDigital extends Obra{
     private String resolucao;
