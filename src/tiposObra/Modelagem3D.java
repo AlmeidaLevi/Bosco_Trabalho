@@ -26,7 +26,7 @@ public class Modelagem3D extends Obra{
         String engine = "Engine: " + this.getSoftware() + "\n";
         String media = "Nota media: " + this.getMediaAvaliacoes() + "\n";
 
-        return titulo + autor + "Tipo: Pintura Digital\n" + numPoligonos + engine + media;
+        return titulo + autor + "Tipo: Modelagem3D\n" + numPoligonos + engine + media;
     }
 }
 

@@ -26,6 +26,6 @@ public class ArteGenerativa extends Obra{
         String seed = "Seed: " + this.getSoftware() + "\n";
         String media = "Nota media: " + this.getMediaAvaliacoes() + "\n";
 
-        return titulo + autor + "Tipo: Pintura Digital\n" + algoritmo + seed + media;
+        return titulo + autor + "Tipo: Arte Generativa\n" + algoritmo + seed + media;
     }
 }
