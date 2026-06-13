@@ -179,9 +179,6 @@ public class PublicarObraPainel extends JPanel{
             this.galeria.publicarObra(new_obra);
             mensagemAviso.setText("OBRA CADASTRADA COM SUCESSO!!!!!!");
             this.mensagemAviso.setForeground(Color.GREEN);
-            for(Obra obra : this.galeria.listarObras()){
-                System.out.println(obra.getTitulo());
-            }
 
         } catch (ObraJaCadastradaException exception) {
             mensagemAviso.setText("OBRA JÁ FOI CADASTRADA ANTERIORMENTE!!!!!!");

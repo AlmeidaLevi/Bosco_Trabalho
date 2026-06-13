@@ -1,15 +1,19 @@
 package src.windows;
 
 import java.awt.CardLayout;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 import src.interfaces.IArtGallery;
 import src.windows.paineis.PublicarObraPainel;
 import src.windows.paineis.RemoverObraPainel;
 import src.windows.paineis.MenuPrincipalPainel;
 import src.windows.paineis.AvaliarObraPainel;
+import src.windows.paineis.ListarObrasPainel;
 
 public class MainWindow extends JFrame{
+
     public MainWindow (IArtGallery galeria){
         CardLayout layout = new CardLayout();
         JPanel conteiner = new JPanel(layout);
@@ -18,6 +22,7 @@ public class MainWindow extends JFrame{
         conteiner.add(new PublicarObraPainel(conteiner, layout, galeria), "Publicar Obra");
         conteiner.add(new RemoverObraPainel(conteiner, layout, galeria), "Remover Obra");
         conteiner.add(new AvaliarObraPainel(conteiner, layout, galeria), "Avaliar Obra");
+        conteiner.add(new ListarObrasPainel(conteiner, layout, galeria), "Listar Obras");
 
         add(conteiner);
 

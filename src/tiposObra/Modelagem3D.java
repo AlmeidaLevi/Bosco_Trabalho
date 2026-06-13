@@ -24,8 +24,9 @@ public class Modelagem3D extends Obra{
         String autor = "Autor: " + this.getAutor() + "\n";
         String num_poligonos = "Poligonos: " + this.getNumeroPoligonos() + "\n";
         String engine = "Engine: " + this.getSoftware() + "\n";
+        String media = "Nota media: " + this.getMediaAvaliacoes() + "\n";
 
-        return titulo + autor + "Tipo: Pintura Digital\n" + num_poligonos + engine;
+        return titulo + autor + "Tipo: Pintura Digital\n" + num_poligonos + engine + media;
     }
 }
 

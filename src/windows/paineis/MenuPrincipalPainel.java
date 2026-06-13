@@ -1,11 +1,13 @@
 package src.windows.paineis;
 
-import javax.swing.JButton;
-import javax.swing.JPanel;
 import java.awt.CardLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
 
 public class MenuPrincipalPainel extends JPanel{
     public MenuPrincipalPainel(JPanel conteiner, CardLayout layout){
@@ -18,6 +20,10 @@ public class MenuPrincipalPainel extends JPanel{
 
         JButton botaoAvaliarObra = new JButton("Avaliar Obra");
         botaoAvaliarObra.addActionListener(e -> layout.show(conteiner, "Avaliar Obra"));
+
+        JButton botaoListarObras = new JButton("Listar Obras");
+        botaoListarObras.addActionListener(e -> layout.show(conteiner, "Listar Obras"));
+
 
         setLayout(new GridBagLayout());
 
@@ -33,5 +39,8 @@ public class MenuPrincipalPainel extends JPanel{
 
         gbc.gridy = 2;
         add(botaoAvaliarObra, gbc);
+
+        gbc.gridy = 3;
+        add(botaoListarObras, gbc);
     }
 }

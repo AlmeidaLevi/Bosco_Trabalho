@@ -24,7 +24,8 @@ public class ArteGenerativa extends Obra{
         String autor = "Autor: " + this.getAutor() + "\n";
         String algoritmo = "Algoritmo: " + this.getAlgoritmo() + "\n";
         String seed = "Seed: " + this.getSoftware() + "\n";
+        String media = "Nota media: " + this.getMediaAvaliacoes() + "\n";
 
-        return titulo + autor + "Tipo: Pintura Digital\n" + algoritmo + seed;
+        return titulo + autor + "Tipo: Pintura Digital\n" + algoritmo + seed + media;
     }
 }

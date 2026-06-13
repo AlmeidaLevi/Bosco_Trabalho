@@ -2,6 +2,7 @@ package src;
 
 import java.util.Comparator;
 import java.util.Vector;
+
 import src.excecoes.ExposicaoNaoEncontradaException;
 import src.excecoes.ObraJaCadastradaException;
 import src.excecoes.ObraNaoEncontradaException;
@@ -65,7 +66,7 @@ public class ArtGallery implements IArtGallery {
     @Override
     public Vector<Obra> topObras() {
         Vector<Obra> obras = this.repositorio.listar();
-        obras.sort(Comparator.comparing(Obra::mediaAvaliacoes));
+        obras.sort(Comparator.comparing(Obra::getMediaAvaliacoes));
         return obras;
 
     }

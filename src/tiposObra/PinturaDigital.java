@@ -24,7 +24,8 @@ public class PinturaDigital extends Obra{
         String autor = "Autor: " + this.getAutor() + "\n";
         String resolucao = "Resolucao: " + this.getResolucao() + "\n";
         String software = "Software: " + this.getSoftware() + "\n";
+        String media = "Nota media: " + this.getMediaAvaliacoes() + "\n";
 
-        return titulo + autor + "Tipo: Pintura Digital\n" + resolucao + software;
+        return titulo + autor + "Tipo: Pintura Digital\n" + resolucao + software + media;
     }
 }
