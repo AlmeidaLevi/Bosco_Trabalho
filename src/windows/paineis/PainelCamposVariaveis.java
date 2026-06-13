@@ -15,9 +15,9 @@ public class PainelCamposVariaveis extends JPanel {
     private JTextField segundoCampo;
 
     public PainelCamposVariaveis(JPanel container, CardLayout layout, String campo1, String campo2){
-        JLabel primeiroTexto = new JLabel(campo1 + ": ");
+        JLabel labelPrimeiro = new JLabel(campo1 + ": ");
         primeiroCampo = new JTextField(60);
-        JLabel segundoTexto = new JLabel(campo2 + ": ");
+        JLabel labelSegundo = new JLabel(campo2 + ": ");
         segundoCampo = new JTextField(60);
 
         setLayout(new GridBagLayout());
@@ -27,14 +27,14 @@ public class PainelCamposVariaveis extends JPanel {
 
         gbc.gridx = 0;
         gbc.gridy = 0;
-        add(primeiroTexto, gbc);
+        add(labelPrimeiro, gbc);
 
         gbc.gridx = 1;
         add(primeiroCampo, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 1;
-        add(segundoTexto, gbc);
+        add(labelSegundo, gbc);
 
         gbc.gridx = 1;
 

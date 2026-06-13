@@ -20,10 +20,10 @@ public class RemoverObraPainel extends JPanel{
 
     public RemoverObraPainel(JPanel container, CardLayout layout, IArtGallery galeria){
         this.galeria = galeria;
-        JLabel titulo = new JLabel("Titulo: ");
+        JLabel labelTitulo = new JLabel("Titulo: ");
         JTextField campoTitulo = new JTextField(60);
 
-        JLabel autor = new JLabel("Autor: ");
+        JLabel labelAutor = new JLabel("Autor: ");
         JTextField campoAutor = new JTextField(60);
 
         JButton botaoRemover = new JButton("Remover obra");
@@ -44,14 +44,14 @@ public class RemoverObraPainel extends JPanel{
 
         gbc.gridx = 0;
         gbc.gridy = 0;
-        add(titulo, gbc);
+        add(labelTitulo, gbc);
 
         gbc.gridx = 1;
         add(campoTitulo, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 1;
-        add(autor, gbc);
+        add(labelAutor, gbc);
 
         gbc.gridx = 1;
         add(campoAutor, gbc);

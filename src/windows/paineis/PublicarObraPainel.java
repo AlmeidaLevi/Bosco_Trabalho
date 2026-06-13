@@ -5,11 +5,13 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+
 import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JPanel;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import src.excecoes.ObraJaCadastradaException;
 import src.interfaces.IArtGallery;
 import src.tiposObra.ArteGenerativa;
@@ -23,13 +25,13 @@ public class PublicarObraPainel extends JPanel{
     private JButton botaoVoltar;
     private JButton botaoAdicionar;
 
-    private JLabel titulo;
+    private JLabel labelTitulo;
     private JTextField campoTitulo;
-    private JLabel autor;
+    private JLabel labelAutor;
     private JTextField campoAutor;
     private JLabel mensagemAviso;
 
-    private JLabel categoria;
+    private JLabel labelCategoria;
     private JComboBox<String> campoCategoria;
 
     private JPanel painelPinturaDigital;
@@ -51,9 +53,9 @@ public class PublicarObraPainel extends JPanel{
         botoes.add(botaoAdicionar);
 
         // Criando componentes do formulario
-        this.titulo = new JLabel("Titulo: ");
+        this.labelTitulo = new JLabel("Titulo: ");
         this.campoTitulo = new JTextField(60);
-        this.autor = new JLabel("Autor: ");
+        this.labelAutor = new JLabel("Autor: ");
         this.campoAutor = new JTextField(60);
 
         // label responsavel por avisar se a obra foi cadastrada
@@ -66,7 +68,7 @@ public class PublicarObraPainel extends JPanel{
             "Arte Generativa"
         };
 
-        this.categoria = new JLabel("Categoria da obra: ");
+        this.labelCategoria = new JLabel("Categoria da obra: ");
         this.campoCategoria = new JComboBox<>(categorias);
 
         // Criando paineis persoanlizados que aparecerão ao selecionar uma categoria
@@ -101,21 +103,21 @@ public class PublicarObraPainel extends JPanel{
 
         gbc.gridx = 0;
         gbc.gridy = 0;
-        add(titulo, gbc);
+        add(labelTitulo, gbc);
 
         gbc.gridx = 1;
         add(campoTitulo, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 1;
-        add(autor, gbc);
+        add(labelAutor, gbc);
 
         gbc.gridx = 1;
         add(campoAutor, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 2;
-        add(categoria, gbc);
+        add(labelCategoria, gbc);
 
         gbc.gridx = 1;
         add(campoCategoria, gbc);
