@@ -21,7 +21,7 @@ public class Modelagem3D extends Obra{
     @Override
     public String exibirDetalhes(){
         String titulo = "Titulo: " + this.getTitulo() + "\n";
-        String autor = "Titulo: " + this.getAutor() + "\n";
+        String autor = "Autor: " + this.getAutor() + "\n";
         String num_poligonos = "Poligonos: " + this.getNumeroPoligonos() + "\n";
         String engine = "Engine: " + this.getSoftware() + "\n";
 

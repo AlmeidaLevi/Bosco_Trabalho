@@ -21,7 +21,7 @@ public class PinturaDigital extends Obra{
     @Override
     public String exibirDetalhes(){
         String titulo = "Titulo: " + this.getTitulo() + "\n";
-        String autor = "Titulo: " + this.getAutor() + "\n";
+        String autor = "Autor: " + this.getAutor() + "\n";
         String resolucao = "Resolucao: " + this.getResolucao() + "\n";
         String software = "Software: " + this.getSoftware() + "\n";
 

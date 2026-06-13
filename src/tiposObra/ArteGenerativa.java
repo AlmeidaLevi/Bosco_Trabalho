@@ -21,7 +21,7 @@ public class ArteGenerativa extends Obra{
     @Override
     public String exibirDetalhes(){
         String titulo = "Titulo: " + this.getTitulo() + "\n";
-        String autor = "Titulo: " + this.getAutor() + "\n";
+        String autor = "Autor: " + this.getAutor() + "\n";
         String algoritmo = "Algoritmo: " + this.getAlgoritmo() + "\n";
         String seed = "Seed: " + this.getSoftware() + "\n";
 
