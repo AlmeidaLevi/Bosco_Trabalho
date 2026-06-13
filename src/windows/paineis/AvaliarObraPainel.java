@@ -144,10 +144,6 @@ public class AvaliarObraPainel extends JPanel {
             this.galeria.avaliarObra(obra, avaliacao);
             this.mensagemAviso.setText("Obra avaliada com sucesso!!");
             this.mensagemAviso.setForeground(Color.GREEN);
-            Obra tObra = galeria.buscarObra(obra.getTitulo(), obra.getAutor());
-            for(Avaliacao a : tObra.listarAvaliacoes()){
-                System.out.println(a.getComentario());
-            }
         } catch (ObraNaoEncontradaException | NullPointerException e) {
             this.mensagemAviso.setText("Obra " + textoTitulo + " do autor " + textoAutor + " não encontrada!!!" + e.getMessage());
             this.mensagemAviso.setForeground(Color.RED);
