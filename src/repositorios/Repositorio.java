@@ -28,16 +28,16 @@ public class Repositorio implements IRepositorioObra{
 
     @Override
     public Vector<Obra> buscar(String titulo){
-        Vector<Obra> obras_encontradas = new Vector<>();
+        Vector<Obra> obrasEncontradas = new Vector<>();
         for (Obra obra : obras){
             if(obra.getTitulo().equals(titulo)){
-                obras_encontradas.add(obra);
+                obrasEncontradas.add(obra);
             }
         }
-        if (obras_encontradas.isEmpty()){
+        if (obrasEncontradas.isEmpty()){
             return null;
         }
-        return obras_encontradas;
+        return obrasEncontradas;
     }
 
     @Override

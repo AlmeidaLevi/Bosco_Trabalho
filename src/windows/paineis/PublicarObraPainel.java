@@ -139,36 +139,36 @@ public class PublicarObraPainel extends JPanel{
     }
 
     public void adicionarObra(){
-        Obra new_obra = null;
+        Obra novaObra = null;
         String textoTitulo = this.campoTitulo.getText();
         String textoAutor = this.campoAutor.getText();
-        String categoria_atual = (String) this.campoCategoria.getSelectedItem();
+        String categoriaAtual = (String) this.campoCategoria.getSelectedItem();
 
         try{
 
-            switch (categoria_atual) {
-                case "Pintura Digital" -> new_obra = new PinturaDigital(textoTitulo,
+            switch (categoriaAtual) {
+                case "Pintura Digital" -> novaObra = new PinturaDigital(textoTitulo,
                     textoAutor,
                     ((PainelCamposVariaveis) this.painelPinturaDigital).getPrimeiroCampo(),
                     ((PainelCamposVariaveis) this.painelPinturaDigital).getSegundoCampo());
-                case "Modelagem3D" -> new_obra = new Modelagem3D(textoTitulo,
+                case "Modelagem3D" -> novaObra = new Modelagem3D(textoTitulo,
                     textoAutor,
                     Integer.parseInt(((PainelCamposVariaveis) this.painelModelagem3D).getPrimeiroCampo()),
                     ((PainelCamposVariaveis) this.painelModelagem3D).getSegundoCampo());
-                case "Arte Generativa" -> new_obra = new ArteGenerativa(textoTitulo,
+                case "Arte Generativa" -> novaObra = new ArteGenerativa(textoTitulo,
                             textoAutor,
                             Integer.parseInt(((PainelCamposVariaveis) this.painelArteGenerativa).getPrimeiroCampo()),
                             ((PainelCamposVariaveis) this.painelArteGenerativa).getSegundoCampo());
             }
 
         } catch (NumberFormatException exception){
-            if ("Modelagem3D".equals(categoria_atual)){
+            if ("Modelagem3D".equals(categoriaAtual)){
                 this.mensagemAviso.setText("O campo 'Numero de poligonos' só aceita numeros como entrada!!");
                 this.mensagemAviso.setForeground(Color.RED);
                 return;
             }
 
-            if ("Arte Generativa".equals(categoria_atual)){
+            if ("Arte Generativa".equals(categoriaAtual)){
                 this.mensagemAviso.setText("O campo 'Seed' só aceita numeros como entrada!!");
                 this.mensagemAviso.setForeground(Color.RED);
                 return;
@@ -176,7 +176,7 @@ public class PublicarObraPainel extends JPanel{
             }
         }
         try {
-            this.galeria.publicarObra(new_obra);
+            this.galeria.publicarObra(novaObra);
             mensagemAviso.setText("OBRA CADASTRADA COM SUCESSO!!!!!!");
             this.mensagemAviso.setForeground(Color.GREEN);
 

@@ -47,15 +47,15 @@ public class ArtGallery implements IArtGallery {
     @Override
     public Vector<Obra> listarObras() {
         Vector<Obra> obras = this.repositorio.listar();
-        Vector<Obra> obras_ativas = new Vector<>();
+        Vector<Obra> obrasAtivas = new Vector<>();
 
         for(Obra obra : obras){
             if(obra.isAtiva()){
-                obras_ativas.add(obra);
+                obrasAtivas.add(obra);
             }
         }
 
-        return obras_ativas;
+        return obrasAtivas;
     }
 
     @Override

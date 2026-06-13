@@ -22,11 +22,11 @@ public class Modelagem3D extends Obra{
     public String exibirDetalhes(){
         String titulo = "Titulo: " + this.getTitulo() + "\n";
         String autor = "Autor: " + this.getAutor() + "\n";
-        String num_poligonos = "Poligonos: " + this.getNumeroPoligonos() + "\n";
+        String numPoligonos = "Poligonos: " + this.getNumeroPoligonos() + "\n";
         String engine = "Engine: " + this.getSoftware() + "\n";
         String media = "Nota media: " + this.getMediaAvaliacoes() + "\n";
 
-        return titulo + autor + "Tipo: Pintura Digital\n" + num_poligonos + engine + media;
+        return titulo + autor + "Tipo: Pintura Digital\n" + numPoligonos + engine + media;
     }
 }
 
