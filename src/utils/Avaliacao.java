@@ -1,15 +1,11 @@
 package src.utils;
-import src.excecoes.ObraJaCadastradaException;
 
 public class Avaliacao {
     private String usuario;
     private int nota;
     private String comentario;
 
-    public Avaliacao(String usuario, int nota, String comentario) throws ObraJaCadastradaException{
-        if (nota > 10 || nota < 0){
-            throw new ObraJaCadastradaException("A nota deve estar entre 0 e 10");
-        }
+    public Avaliacao(String usuario, int nota, String comentario){
         this.usuario = usuario;
         this.nota = nota;
         this.comentario = comentario;

@@ -8,13 +8,16 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 public class MenuPrincipalPainel extends JPanel{
-    public MenuPrincipalPainel(JPanel container, CardLayout layout){
+    public MenuPrincipalPainel(JPanel conteiner, CardLayout layout){
 
         JButton botaoPublicarObra = new JButton("Publicar Obra");
-        botaoPublicarObra.addActionListener(e -> layout.show(container, "Publicar Obra"));
+        botaoPublicarObra.addActionListener(e -> layout.show(conteiner, "Publicar Obra"));
 
         JButton botaoRemoverObra = new JButton("Remover Obra");
-        botaoRemoverObra.addActionListener(e -> layout.show(container, "Remover Obra"));
+        botaoRemoverObra.addActionListener(e -> layout.show(conteiner, "Remover Obra"));
+
+        JButton botaoAvaliarObra = new JButton("Avaliar Obra");
+        botaoAvaliarObra.addActionListener(e -> layout.show(conteiner, "Avaliar Obra"));
 
         setLayout(new GridBagLayout());
 
@@ -27,5 +30,8 @@ public class MenuPrincipalPainel extends JPanel{
 
         gbc.gridy = 1;
         add(botaoRemoverObra, gbc);
+
+        gbc.gridy = 2;
+        add(botaoAvaliarObra, gbc);
     }
 }

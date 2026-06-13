@@ -13,6 +13,7 @@ public abstract class Obra {
         this.titulo = titulo;
         this.autor = autor;
         this.ativa = true;
+        this.avaliacoes = new Vector<>();
     }
 
 
@@ -34,6 +35,10 @@ public abstract class Obra {
 
     public void adicionarAvaliacao(Avaliacao avaliacao) {
         this.avaliacoes.add(avaliacao);
+    }
+
+    public Vector<Avaliacao> listarAvaliacoes() {
+        return this.avaliacoes;
     }
 
     public double mediaAvaliacoes() {

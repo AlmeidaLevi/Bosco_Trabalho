@@ -34,20 +34,12 @@ public class ArtGallery implements IArtGallery {
 
     @Override
     public void avaliarObra(Obra obra, Avaliacao avaliacao) throws ObraNaoEncontradaException{
-        Vector<Obra> buscarObra = repositorio.buscar(obra.getTitulo());
+        Obra buscarObra = this.buscarObra(obra.getTitulo(), obra.getAutor());
 
         if(buscarObra == null){
             throw new ObraNaoEncontradaException("Obra " + obra.getTitulo() + " do " + obra.getAutor() +" não foi encontrada!!");
         }
-
-        for(Obra o: buscarObra){
-            if(o.getAutor() == obra.getAutor()){
-                o.adicionarAvaliacao(avaliacao);
-                return;
-            }
-        }
-
-        throw new ObraNaoEncontradaException("Obra " + obra.getTitulo() + " do " + obra.getAutor() +" não foi encontrada!!");
+        buscarObra.adicionarAvaliacao(avaliacao);
 
     }
 

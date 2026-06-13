@@ -36,12 +36,12 @@ public class PublicarObraPainel extends JPanel{
     private JPanel painelModelagem3D;
     private JPanel painelArteGenerativa;
 
-    public PublicarObraPainel(JPanel container, CardLayout layout, IArtGallery galeria){
+    public PublicarObraPainel(JPanel conteiner, CardLayout layout, IArtGallery galeria){
         this.galeria = galeria;
 
         // Criando os botões
         this.botaoVoltar = new JButton("Voltar");
-        botaoVoltar.addActionListener(e -> layout.show(container, "Menu Principal"));
+        botaoVoltar.addActionListener(e -> layout.show(conteiner, "Menu Principal"));
 
         botaoAdicionar = new JButton("Adicionar");
         botaoAdicionar.addActionListener(e -> this.adicionarObra());
@@ -72,9 +72,9 @@ public class PublicarObraPainel extends JPanel{
         // Criando paineis persoanlizados que aparecerão ao selecionar uma categoria
         CardLayout layoutPaineisPersonalizados = new CardLayout();
 
-        this.painelPinturaDigital = new PainelCamposVariaveis(container, layoutPaineisPersonalizados, "Resolução", "Software");
-        this.painelModelagem3D = new PainelCamposVariaveis(container, layoutPaineisPersonalizados, "Numero de poligonos", "Engine");
-        this.painelArteGenerativa = new PainelCamposVariaveis(container, layoutPaineisPersonalizados, "Seed", "Algoritmo");
+        this.painelPinturaDigital = new PainelCamposVariaveis(conteiner, layoutPaineisPersonalizados, "Resolução", "Software");
+        this.painelModelagem3D = new PainelCamposVariaveis(conteiner, layoutPaineisPersonalizados, "Numero de poligonos", "Engine");
+        this.painelArteGenerativa = new PainelCamposVariaveis(conteiner, layoutPaineisPersonalizados, "Seed", "Algoritmo");
 
         JPanel paineisPersonalizados = new JPanel(layoutPaineisPersonalizados);
         paineisPersonalizados.add(painelPinturaDigital, "Pintura Digital");

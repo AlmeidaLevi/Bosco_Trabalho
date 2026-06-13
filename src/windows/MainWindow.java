@@ -7,17 +7,19 @@ import src.interfaces.IArtGallery;
 import src.windows.paineis.PublicarObraPainel;
 import src.windows.paineis.RemoverObraPainel;
 import src.windows.paineis.MenuPrincipalPainel;
+import src.windows.paineis.AvaliarObraPainel;
 
 public class MainWindow extends JFrame{
     public MainWindow (IArtGallery galeria){
         CardLayout layout = new CardLayout();
-        JPanel container = new JPanel(layout);
+        JPanel conteiner = new JPanel(layout);
 
-        container.add(new MenuPrincipalPainel(container, layout), "Menu Principal");
-        container.add(new PublicarObraPainel(container, layout, galeria), "Publicar Obra");
-        container.add(new RemoverObraPainel(container, layout, galeria), "Remover Obra");
+        conteiner.add(new MenuPrincipalPainel(conteiner, layout), "Menu Principal");
+        conteiner.add(new PublicarObraPainel(conteiner, layout, galeria), "Publicar Obra");
+        conteiner.add(new RemoverObraPainel(conteiner, layout, galeria), "Remover Obra");
+        conteiner.add(new AvaliarObraPainel(conteiner, layout, galeria), "Avaliar Obra");
 
-        add(container);
+        add(conteiner);
 
         setTitle("Art Gallery");
         setSize(1920, 1080);
