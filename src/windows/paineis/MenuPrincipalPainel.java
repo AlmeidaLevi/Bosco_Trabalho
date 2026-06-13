@@ -24,6 +24,8 @@ public class MenuPrincipalPainel extends JPanel{
         JButton botaoListarObras = new JButton("Listar Obras");
         botaoListarObras.addActionListener(e -> layout.show(conteiner, "Listar Obras"));
 
+        JButton botaoBuscarObrasPorAutor = new JButton("Buscar obras por autor");
+        botaoBuscarObrasPorAutor.addActionListener(e -> layout.show(conteiner, "Buscar obras por autor"));
 
         setLayout(new GridBagLayout());
 
@@ -42,5 +44,8 @@ public class MenuPrincipalPainel extends JPanel{
 
         gbc.gridy = 3;
         add(botaoListarObras, gbc);
+
+        gbc.gridy = 4;
+        add(botaoBuscarObrasPorAutor, gbc);
     }
 }

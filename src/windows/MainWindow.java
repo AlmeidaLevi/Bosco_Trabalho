@@ -11,6 +11,7 @@ import src.windows.paineis.RemoverObraPainel;
 import src.windows.paineis.MenuPrincipalPainel;
 import src.windows.paineis.AvaliarObraPainel;
 import src.windows.paineis.ListarObrasPainel;
+import src.windows.paineis.BuscarObrasPorAutorPainel;
 
 public class MainWindow extends JFrame{
 
@@ -23,6 +24,7 @@ public class MainWindow extends JFrame{
         conteiner.add(new RemoverObraPainel(conteiner, layout, galeria), "Remover Obra");
         conteiner.add(new AvaliarObraPainel(conteiner, layout, galeria), "Avaliar Obra");
         conteiner.add(new ListarObrasPainel(conteiner, layout, galeria), "Listar Obras");
+        conteiner.add(new BuscarObrasPorAutorPainel(conteiner, layout, galeria), "Buscar obras por autor");
 
         add(conteiner);
 
