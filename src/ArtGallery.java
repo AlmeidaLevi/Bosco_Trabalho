@@ -66,7 +66,8 @@ public class ArtGallery implements IArtGallery {
     @Override
     public Vector<Obra> topObras() {
         Vector<Obra> obras = this.repositorio.listar();
-        obras.sort(Comparator.comparing(Obra::getMediaAvaliacoes));
+        // Por padrão o comparing ordena do menor para o maior, o reversed() inverte essa ordem
+        obras.sort(Comparator.comparing(Obra::getMediaAvaliacoes).reversed());
         return obras;
 
     }
