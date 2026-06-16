@@ -2,6 +2,7 @@ package src.interfaces;
 
 import java.util.Vector;
 
+import src.excecoes.ExposicaoJaCadastradaException;
 import src.excecoes.ExposicaoNaoEncontradaException;
 import src.excecoes.ObraJaCadastradaException;
 import src.excecoes.ObraNaoEncontradaException;
@@ -23,7 +24,7 @@ public interface IArtGallery {
 
     public Vector<Obra> topObras();
 
-    public void adicionarExposicao(Exposicao exposicao);
+    public void adicionarExposicao(Exposicao exposicao) throws ExposicaoJaCadastradaException;
 
     public Vector<Obra> obrasExpostas(String nomeExposicao) throws ExposicaoNaoEncontradaException;
 

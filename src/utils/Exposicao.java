@@ -10,6 +10,7 @@ public class Exposicao {
 
     public Exposicao(String nome){
         this.nome = nome;
+        this.obras = new Vector<>();
     }
 
     public String getNome(){

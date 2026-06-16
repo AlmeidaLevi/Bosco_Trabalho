@@ -3,6 +3,7 @@ package src;
 import java.util.Comparator;
 import java.util.Vector;
 
+import src.excecoes.ExposicaoJaCadastradaException;
 import src.excecoes.ExposicaoNaoEncontradaException;
 import src.excecoes.ObraJaCadastradaException;
 import src.excecoes.ObraNaoEncontradaException;
@@ -73,7 +74,12 @@ public class ArtGallery implements IArtGallery {
     }
 
     @Override
-    public void adicionarExposicao(Exposicao exposicao){
+    public void adicionarExposicao(Exposicao exposicao) throws ExposicaoJaCadastradaException{
+        for(Exposicao ex: this.exposicoes){
+            if(ex.getNome().equals(exposicao.getNome())){
+                throw new ExposicaoJaCadastradaException("A exposição de nome (" + exposicao.getNome() +") já foi cadastrada!!!");
+            }
+        }
         this.exposicoes.add(exposicao);
     }
 
