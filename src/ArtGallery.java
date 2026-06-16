@@ -41,6 +41,16 @@ public class ArtGallery implements IArtGallery {
         if(buscarObra == null){
             throw new ObraNaoEncontradaException("Obra " + obra.getTitulo() + " do " + obra.getAutor() +" não foi encontrada!!");
         }
+
+        // Substituindo as informações da avaliação caso o usuario seja o mesmo
+        for(Avaliacao a : buscarObra.listarAvaliacoes()){
+            if(a.getUsuario().equals(avaliacao.getUsuario())){
+                a.setComentario(avaliacao.getComentario());
+                a.setNota(avaliacao.getNota());
+                return;
+            }
+        }
+
         buscarObra.adicionarAvaliacao(avaliacao);
 
     }

@@ -22,4 +22,13 @@ public class Avaliacao {
     public String getComentario() {
         return this.comentario;
     }
+
+    public void setNota(int nota){
+        this.nota = nota;
+    }
+
+    public void setComentario(String comentario){
+        this.comentario = comentario;
+    }
+
 }

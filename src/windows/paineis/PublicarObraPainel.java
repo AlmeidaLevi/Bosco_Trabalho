@@ -143,7 +143,6 @@ public class PublicarObraPainel extends JPanel{
         String primeiroCampoPersonalizado = "";
         String segundoCampoPersonalizado = "";
 
-
         // Tentando construir a obra com as informações dos campos
         try{
             // Pegando as insformações dos ultimos dois campos (Eles são dinamicos para cada tipo de obra)
@@ -158,28 +157,31 @@ public class PublicarObraPainel extends JPanel{
                         primeiroCampoPersonalizado,
                         segundoCampoPersonalizado
                     );
+                    break;
 
                 case "Modelagem3D":
                     primeiroCampoPersonalizado = ((CamposPersonalizadosPainel) this.painelModelagem3D).getPrimeiroCampo();
                     segundoCampoPersonalizado = ((CamposPersonalizadosPainel) this.painelModelagem3D).getSegundoCampo();
-
+                    System.err.println(Integer.parseInt(primeiroCampoPersonalizado));
                     novaObra = new Modelagem3D(
                         textoTitulo,
                         textoAutor,
                         Integer.parseInt(primeiroCampoPersonalizado),
                         segundoCampoPersonalizado
-                );
+                    );
+                    break;
+
 
                 case "Arte Generativa":
                     primeiroCampoPersonalizado = ((CamposPersonalizadosPainel) this.painelArteGenerativa).getPrimeiroCampo();
                     segundoCampoPersonalizado = ((CamposPersonalizadosPainel) this.painelArteGenerativa).getSegundoCampo();
-
                     novaObra = new ArteGenerativa(
                         textoTitulo,
                         textoAutor,
                         Integer.parseInt(primeiroCampoPersonalizado),
                         segundoCampoPersonalizado
-                );
+                    );
+                    break;
             }
 
         } catch (NumberFormatException exception){
@@ -197,7 +199,7 @@ public class PublicarObraPainel extends JPanel{
         }
 
         // Verificando se algum dos campos é vazio
-        if(primeiroCampoPersonalizado.isBlank() | segundoCampoPersonalizado.isBlank()){
+        if(primeiroCampoPersonalizado.isBlank() || segundoCampoPersonalizado.isBlank()){
             this.mensagemAviso.setText("Existe um campo vazio, preencha os campos corretamente!");
             this.mensagemAviso.setForeground(Color.RED);
             return;
