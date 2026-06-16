@@ -124,7 +124,8 @@ public class CriarExposicaoPainel extends JPanel{
     }
 
     public void criarExposicao(){
-        Exposicao exposicao = new Exposicao(this.campoExposicao.getText());
+        String nomeExposicao = this.campoExposicao.getText();
+        Exposicao exposicao = new Exposicao(nomeExposicao);
 
         for(Obra obra : this.obrasSelecionadas){
             exposicao.adicionarObra(obra);

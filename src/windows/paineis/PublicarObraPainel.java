@@ -140,31 +140,45 @@ public class PublicarObraPainel extends JPanel{
         String textoTitulo = this.campoTitulo.getText();
         String textoAutor = this.campoAutor.getText();
         String categoriaAtual = (String) this.campoCategoria.getSelectedItem();
+        String primeiroCampoPersonalizado = "";
+        String segundoCampoPersonalizado = "";
 
 
         // Tentando construir a obra com as informações dos campos
         try{
             // Pegando as insformações dos ultimos dois campos (Eles são dinamicos para cada tipo de obra)
             switch (categoriaAtual) {
-                case "Pintura Digital" -> novaObra = new PinturaDigital(
-                    textoTitulo,
-                    textoAutor,
-                    ((CamposPersonalizadosPainel) this.painelPinturaDigital).getPrimeiroCampo(),
-                    ((CamposPersonalizadosPainel) this.painelPinturaDigital).getSegundoCampo()
+                case "Pintura Digital":
+                    primeiroCampoPersonalizado = ((CamposPersonalizadosPainel) this.painelPinturaDigital).getPrimeiroCampo();
+                    segundoCampoPersonalizado = ((CamposPersonalizadosPainel) this.painelPinturaDigital).getSegundoCampo();
+
+                    novaObra = new PinturaDigital(
+                        textoTitulo,
+                        textoAutor,
+                        primeiroCampoPersonalizado,
+                        segundoCampoPersonalizado
+                    );
+
+                case "Modelagem3D":
+                    primeiroCampoPersonalizado = ((CamposPersonalizadosPainel) this.painelModelagem3D).getPrimeiroCampo();
+                    segundoCampoPersonalizado = ((CamposPersonalizadosPainel) this.painelModelagem3D).getSegundoCampo();
+
+                    novaObra = new Modelagem3D(
+                        textoTitulo,
+                        textoAutor,
+                        Integer.parseInt(primeiroCampoPersonalizado),
+                        segundoCampoPersonalizado
                 );
 
-                case "Modelagem3D" -> novaObra = new Modelagem3D(
-                    textoTitulo,
-                    textoAutor,
-                    Integer.parseInt(((CamposPersonalizadosPainel) this.painelModelagem3D).getPrimeiroCampo()),
-                    ((CamposPersonalizadosPainel) this.painelModelagem3D).getSegundoCampo()
-                );
+                case "Arte Generativa":
+                    primeiroCampoPersonalizado = ((CamposPersonalizadosPainel) this.painelArteGenerativa).getPrimeiroCampo();
+                    segundoCampoPersonalizado = ((CamposPersonalizadosPainel) this.painelArteGenerativa).getSegundoCampo();
 
-                case "Arte Generativa" -> novaObra = new ArteGenerativa(
-                    textoTitulo,
-                    textoAutor,
-                    Integer.parseInt(((CamposPersonalizadosPainel) this.painelArteGenerativa).getPrimeiroCampo()),
-                    ((CamposPersonalizadosPainel) this.painelArteGenerativa).getSegundoCampo()
+                    novaObra = new ArteGenerativa(
+                        textoTitulo,
+                        textoAutor,
+                        Integer.parseInt(primeiroCampoPersonalizado),
+                        segundoCampoPersonalizado
                 );
             }
 
@@ -180,6 +194,13 @@ public class PublicarObraPainel extends JPanel{
                 this.mensagemAviso.setForeground(Color.RED);
                 return;
             }
+        }
+
+        // Verificando se algum dos campos é vazio
+        if(primeiroCampoPersonalizado.isBlank() | segundoCampoPersonalizado.isBlank()){
+            this.mensagemAviso.setText("Existe um campo vazio, preencha os campos corretamente!");
+            this.mensagemAviso.setForeground(Color.RED);
+            return;
         }
 
 

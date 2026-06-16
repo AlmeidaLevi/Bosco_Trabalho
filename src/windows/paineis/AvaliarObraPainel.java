@@ -132,12 +132,21 @@ public class AvaliarObraPainel extends JPanel {
         String textoTitulo = this.campoTitulo.getText();
         String textoAutor = this.campoAutor.getText();
         Obra obra = galeria.buscarObra(textoTitulo, textoAutor);
+
         String usuario = this.campoUsuario.getText();
 
         // o getValue do JSppiner retorna um object, então é necessario o cast para integer
         int nota = (Integer) this.campoNota.getValue();
 
         String comentario = this.campoComentario.getText();
+
+        // Verificando se algum dos campos é vazio
+        if(usuario.isBlank() || comentario.isBlank()){
+            this.mensagemAviso.setText("Existe um campo vazio, preencha os campos corretamente!");
+            this.mensagemAviso.setForeground(Color.RED);
+            return;
+        }
+
         Avaliacao avaliacao = new Avaliacao(usuario, nota, comentario);
 
         try{
