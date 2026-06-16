@@ -11,14 +11,14 @@ import javax.swing.JTextArea;
 import src.interfaces.IArtGallery;
 import src.tiposObra.Obra;
 
-public class ExibirTopObras extends JPanel{
+public class ExibirTopObrasPainel extends JPanel{
     GridBagConstraints gbc;
     IArtGallery galeria;
     JButton botaoVoltar = new JButton("Voltar");
     JPanel container;
     CardLayout layout;
 
-    public ExibirTopObras(JPanel container, CardLayout layout, IArtGallery galeria){
+    public ExibirTopObrasPainel(JPanel container, CardLayout layout, IArtGallery galeria){
         this.container = container;
         this.layout = layout;
         this.galeria = galeria;

@@ -1,11 +1,13 @@
 package src.interfaces;
 
 import java.util.Vector;
+
 import src.excecoes.ExposicaoNaoEncontradaException;
 import src.excecoes.ObraJaCadastradaException;
 import src.excecoes.ObraNaoEncontradaException;
 import src.tiposObra.Obra;
 import src.utils.Avaliacao;
+import src.utils.Exposicao;
 
 public interface IArtGallery {
 
@@ -20,6 +22,8 @@ public interface IArtGallery {
     public Vector<Obra> buscarPorAutor(String autor);
 
     public Vector<Obra> topObras();
+
+    public void adicionarExposicao(Exposicao exposicao);
 
     public Vector<Obra> obrasExpostas(String nomeExposicao) throws ExposicaoNaoEncontradaException;
 

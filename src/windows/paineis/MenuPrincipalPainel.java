@@ -30,6 +30,11 @@ public class MenuPrincipalPainel extends JPanel{
         JButton botaoExibirTopObras = new JButton("Exibir TOP obras");
         botaoExibirTopObras.addActionListener(e -> layout.show(conteiner, "Exibir TOP obras"));
 
+        JButton botaoCriarExposicao = new JButton("Criar Exposição");
+        botaoCriarExposicao.addActionListener(e -> layout.show(conteiner, "Criar Exposição"));
+
+
+
         setLayout(new GridBagLayout());
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -54,5 +59,7 @@ public class MenuPrincipalPainel extends JPanel{
         gbc.gridy = 5;
         add(botaoExibirTopObras, gbc);
 
+        gbc.gridy = 6;
+        add(botaoCriarExposicao, gbc);
     }
 }

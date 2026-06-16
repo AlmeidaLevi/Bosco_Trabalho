@@ -8,11 +8,12 @@ import javax.swing.JPanel;
 import src.interfaces.IArtGallery;
 import src.windows.paineis.AvaliarObraPainel;
 import src.windows.paineis.BuscarObrasPorAutorPainel;
-import src.windows.paineis.ExibirTopObras;
+import src.windows.paineis.ExibirTopObrasPainel;
 import src.windows.paineis.ListarObrasPainel;
 import src.windows.paineis.MenuPrincipalPainel;
 import src.windows.paineis.PublicarObraPainel;
 import src.windows.paineis.RemoverObraPainel;
+import src.windows.paineis.CriarExposicaoPainel;
 
 public class MainWindow extends JFrame{
 
@@ -26,7 +27,8 @@ public class MainWindow extends JFrame{
         conteiner.add(new AvaliarObraPainel(conteiner, layout, galeria), "Avaliar Obra");
         conteiner.add(new ListarObrasPainel(conteiner, layout, galeria), "Listar Obras");
         conteiner.add(new BuscarObrasPorAutorPainel(conteiner, layout, galeria), "Buscar obras por autor");
-        conteiner.add(new ExibirTopObras(conteiner, layout, galeria), "Exibir TOP obras");
+        conteiner.add(new ExibirTopObrasPainel(conteiner, layout, galeria), "Exibir TOP obras");
+        conteiner.add(new CriarExposicaoPainel(conteiner, layout, galeria), "Criar Exposição");
 
         add(conteiner);
 

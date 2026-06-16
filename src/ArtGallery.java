@@ -73,6 +73,11 @@ public class ArtGallery implements IArtGallery {
     }
 
     @Override
+    public void adicionarExposicao(Exposicao exposicao){
+        this.exposicoes.add(exposicao);
+    }
+
+    @Override
     public Vector<Obra> obrasExpostas(String nomeExposicao) throws ExposicaoNaoEncontradaException{
         Exposicao exposicao = null;
         for (Exposicao ex : this.exposicoes){
@@ -86,9 +91,7 @@ public class ArtGallery implements IArtGallery {
         return exposicao.listarObras();
     }
 
-    public void adicionarExposicao(Exposicao exposicao){
-        this.exposicoes.add(exposicao);
-    }
+
 
     @Override
     public Obra buscarObra(String titulo, String autor){
