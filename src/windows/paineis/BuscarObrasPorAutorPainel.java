@@ -14,8 +14,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import src.entidades.tiposObra.Obra;
 import src.interfaces.IArtGallery;
-import src.tiposObra.Obra;
 
 public class BuscarObrasPorAutorPainel extends JPanel{
     private IArtGallery galeria;

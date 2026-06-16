@@ -3,15 +3,15 @@ package src;
 import java.util.Comparator;
 import java.util.Vector;
 
+import src.entidades.tiposObra.Obra;
 import src.excecoes.ExposicaoJaCadastradaException;
 import src.excecoes.ExposicaoNaoEncontradaException;
 import src.excecoes.ObraJaCadastradaException;
 import src.excecoes.ObraNaoEncontradaException;
 import src.interfaces.IArtGallery;
 import src.interfaces.IRepositorioObra;
-import src.tiposObra.Obra;
-import src.utils.Avaliacao;
-import src.utils.Exposicao;
+import src.entidades.Avaliacao;
+import src.entidades.Exposicao;
 
 
 public class ArtGallery implements IArtGallery {

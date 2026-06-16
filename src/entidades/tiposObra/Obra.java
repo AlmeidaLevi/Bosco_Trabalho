@@ -1,7 +1,7 @@
-package src.tiposObra;
+package src.entidades.tiposObra;
 
 import java.util.Vector;
-import src.utils.Avaliacao;
+import src.entidades.Avaliacao;
 
 public abstract class Obra {
     private String titulo;

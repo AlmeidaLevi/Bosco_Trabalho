@@ -1,7 +1,7 @@
-package src.utils;
+package src.entidades;
 import java.util.Vector;
 
-import src.tiposObra.Obra;
+import src.entidades.tiposObra.Obra;
 
 public class Exposicao {
 

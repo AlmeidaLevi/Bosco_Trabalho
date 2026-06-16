@@ -1,4 +1,4 @@
-package src.tiposObra;
+package src.entidades.tiposObra;
 
 public class ArteGenerativa extends Obra{
     private String algoritmo;

@@ -12,12 +12,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import src.entidades.tiposObra.ArteGenerativa;
+import src.entidades.tiposObra.Modelagem3D;
+import src.entidades.tiposObra.Obra;
+import src.entidades.tiposObra.PinturaDigital;
 import src.excecoes.ObraJaCadastradaException;
 import src.interfaces.IArtGallery;
-import src.tiposObra.ArteGenerativa;
-import src.tiposObra.Modelagem3D;
-import src.tiposObra.Obra;
-import src.tiposObra.PinturaDigital;
 
 public class PublicarObraPainel extends JPanel{
     private IArtGallery galeria;

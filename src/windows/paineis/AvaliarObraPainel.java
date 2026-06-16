@@ -13,10 +13,10 @@ import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 
+import src.entidades.tiposObra.Obra;
 import src.excecoes.ObraNaoEncontradaException;
 import src.interfaces.IArtGallery;
-import src.tiposObra.Obra;
-import src.utils.Avaliacao;
+import src.entidades.Avaliacao;
 
 
 public class AvaliarObraPainel extends JPanel {

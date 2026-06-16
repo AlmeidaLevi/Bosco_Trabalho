@@ -9,8 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import src.entidades.tiposObra.Obra;
 import src.interfaces.IArtGallery;
-import src.tiposObra.Obra;
 
 public class ListarObrasPainel extends JPanel{
     GridBagConstraints gbc;

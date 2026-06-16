@@ -14,10 +14,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import src.entidades.tiposObra.Obra;
 import src.excecoes.ExposicaoJaCadastradaException;
 import src.interfaces.IArtGallery;
-import src.tiposObra.Obra;
-import src.utils.Exposicao;
+import src.entidades.Exposicao;
 
 public class CriarExposicaoPainel extends JPanel{
     private JLabel labelExposicao;

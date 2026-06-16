@@ -1,4 +1,4 @@
-package src.utils;
+package src.entidades;
 
 public class Avaliacao {
     private String usuario;

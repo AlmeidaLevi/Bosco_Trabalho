@@ -2,10 +2,10 @@ package src.repositorios;
 
 import java.util.Vector;
 
+import src.entidades.tiposObra.Obra;
 import src.excecoes.ObraJaCadastradaException;
 import src.excecoes.ObraNaoEncontradaException;
 import src.interfaces.IRepositorioObra;
-import src.tiposObra.Obra;
 
 public class Repositorio implements IRepositorioObra{
 

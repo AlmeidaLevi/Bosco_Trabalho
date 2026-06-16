@@ -1,8 +1,9 @@
 package src.interfaces;
 import java.util.Vector;
+
+import src.entidades.tiposObra.Obra;
 import src.excecoes.ObraJaCadastradaException;
 import src.excecoes.ObraNaoEncontradaException;
-import src.tiposObra.Obra;
 
 public interface IRepositorioObra {
 
