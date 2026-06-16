@@ -10,11 +10,11 @@ import javax.swing.JTextField;
 
 // Classe recebe o nome de dois campos e retorna um Painel contendo a label e o campo para ambos os nomes
 
-public class PainelCamposVariaveis extends JPanel {
+public class CamposPersonalizadosPainel extends JPanel {
     private JTextField primeiroCampo;
     private JTextField segundoCampo;
 
-    public PainelCamposVariaveis(JPanel conteiner, CardLayout layout, String campo1, String campo2){
+    public CamposPersonalizadosPainel(JPanel conteiner, CardLayout layout, String campo1, String campo2){
         JLabel labelPrimeiro = new JLabel(campo1 + ": ");
         primeiroCampo = new JTextField(60);
         JLabel labelSegundo = new JLabel(campo2 + ": ");

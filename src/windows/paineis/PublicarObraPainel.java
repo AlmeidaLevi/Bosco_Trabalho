@@ -74,9 +74,9 @@ public class PublicarObraPainel extends JPanel{
         // Criando paineis persoanlizados que aparecerão ao selecionar uma categoria
         CardLayout layoutPaineisPersonalizados = new CardLayout();
 
-        this.painelPinturaDigital = new PainelCamposVariaveis(conteiner, layoutPaineisPersonalizados, "Resolução", "Software");
-        this.painelModelagem3D = new PainelCamposVariaveis(conteiner, layoutPaineisPersonalizados, "Numero de poligonos", "Engine");
-        this.painelArteGenerativa = new PainelCamposVariaveis(conteiner, layoutPaineisPersonalizados, "Seed", "Algoritmo");
+        this.painelPinturaDigital = new CamposPersonalizadosPainel(conteiner, layoutPaineisPersonalizados, "Resolução", "Software");
+        this.painelModelagem3D = new CamposPersonalizadosPainel(conteiner, layoutPaineisPersonalizados, "Numero de poligonos", "Engine");
+        this.painelArteGenerativa = new CamposPersonalizadosPainel(conteiner, layoutPaineisPersonalizados, "Seed", "Algoritmo");
 
         JPanel paineisPersonalizados = new JPanel(layoutPaineisPersonalizados);
         paineisPersonalizados.add(painelPinturaDigital, "Pintura Digital");
@@ -92,8 +92,6 @@ public class PublicarObraPainel extends JPanel{
             (String) campoCategoria.getSelectedItem()
             );
         });
-
-
 
         // Ajustando o layout
         setLayout(new GridBagLayout());
@@ -127,7 +125,6 @@ public class PublicarObraPainel extends JPanel{
         gbc.gridwidth = 2;
         add(paineisPersonalizados, gbc);
 
-
         gbc.gridx = 1;
         gbc.gridy = 5;
         add(botoes, gbc);
@@ -144,21 +141,31 @@ public class PublicarObraPainel extends JPanel{
         String textoAutor = this.campoAutor.getText();
         String categoriaAtual = (String) this.campoCategoria.getSelectedItem();
 
-        try{
 
+        // Tentando construir a obra com as informações dos campos
+        try{
+            // Pegando as insformações dos ultimos dois campos (Eles são dinamicos para cada tipo de obra)
             switch (categoriaAtual) {
-                case "Pintura Digital" -> novaObra = new PinturaDigital(textoTitulo,
+                case "Pintura Digital" -> novaObra = new PinturaDigital(
+                    textoTitulo,
                     textoAutor,
-                    ((PainelCamposVariaveis) this.painelPinturaDigital).getPrimeiroCampo(),
-                    ((PainelCamposVariaveis) this.painelPinturaDigital).getSegundoCampo());
-                case "Modelagem3D" -> novaObra = new Modelagem3D(textoTitulo,
+                    ((CamposPersonalizadosPainel) this.painelPinturaDigital).getPrimeiroCampo(),
+                    ((CamposPersonalizadosPainel) this.painelPinturaDigital).getSegundoCampo()
+                );
+
+                case "Modelagem3D" -> novaObra = new Modelagem3D(
+                    textoTitulo,
                     textoAutor,
-                    Integer.parseInt(((PainelCamposVariaveis) this.painelModelagem3D).getPrimeiroCampo()),
-                    ((PainelCamposVariaveis) this.painelModelagem3D).getSegundoCampo());
-                case "Arte Generativa" -> novaObra = new ArteGenerativa(textoTitulo,
-                            textoAutor,
-                            Integer.parseInt(((PainelCamposVariaveis) this.painelArteGenerativa).getPrimeiroCampo()),
-                            ((PainelCamposVariaveis) this.painelArteGenerativa).getSegundoCampo());
+                    Integer.parseInt(((CamposPersonalizadosPainel) this.painelModelagem3D).getPrimeiroCampo()),
+                    ((CamposPersonalizadosPainel) this.painelModelagem3D).getSegundoCampo()
+                );
+
+                case "Arte Generativa" -> novaObra = new ArteGenerativa(
+                    textoTitulo,
+                    textoAutor,
+                    Integer.parseInt(((CamposPersonalizadosPainel) this.painelArteGenerativa).getPrimeiroCampo()),
+                    ((CamposPersonalizadosPainel) this.painelArteGenerativa).getSegundoCampo()
+                );
             }
 
         } catch (NumberFormatException exception){
@@ -172,9 +179,11 @@ public class PublicarObraPainel extends JPanel{
                 this.mensagemAviso.setText("O campo 'Seed' só aceita numeros como entrada!!");
                 this.mensagemAviso.setForeground(Color.RED);
                 return;
-
             }
         }
+
+
+        // Tentando cadastrar a obra
         try {
             this.galeria.publicarObra(novaObra);
             mensagemAviso.setText("OBRA CADASTRADA COM SUCESSO!!!!!!");
