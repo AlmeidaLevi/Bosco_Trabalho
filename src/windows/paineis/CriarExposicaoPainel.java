@@ -28,13 +28,13 @@ public class CriarExposicaoPainel extends JPanel{
     private Vector<Obra> obrasSelecionadas = new Vector<>();
     private JLabel mensagemAviso;
 
-    public CriarExposicaoPainel(JPanel container, CardLayout layout, IArtGallery galeria){
+    public CriarExposicaoPainel(JPanel conteiner, CardLayout layout, IArtGallery galeria){
         this.galeria = galeria;
         this.labelExposicao = new JLabel("Nome da exposicao");
         this.campoExposicao = new JTextField(60);
 
         JButton botaoVoltar = new JButton("Voltar");
-        botaoVoltar.addActionListener(e -> layout.show(container, "Menu Principal"));
+        botaoVoltar.addActionListener(e -> layout.show(conteiner, "Menu Principal"));
         JButton botaoCriarExposicao = new JButton("Criar Exposicao");
         botaoCriarExposicao.addActionListener(e -> this.criarExposicao());
 

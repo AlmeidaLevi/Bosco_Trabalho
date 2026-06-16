@@ -28,14 +28,14 @@ public class BuscarObrasPorAutorPainel extends JPanel{
 
 
 
-    public BuscarObrasPorAutorPainel(JPanel container, CardLayout layout, IArtGallery galeria){
+    public BuscarObrasPorAutorPainel(JPanel conteiner, CardLayout layout, IArtGallery galeria){
         this.galeria = galeria;
 
         this.labelAutor = new JLabel("Autor: ");
         this.campoAutor = new JTextField(60);
 
         this.botaoVoltar = new JButton("Voltar");
-        this.botaoVoltar.addActionListener(e -> layout.show(container, "Menu Principal"));
+        this.botaoVoltar.addActionListener(e -> layout.show(conteiner, "Menu Principal"));
 
         this.botaoBuscar = new JButton("Buscar");
         this.botaoBuscar.addActionListener(e -> this.buscar());

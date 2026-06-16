@@ -18,13 +18,13 @@ public class ExibirTopObrasPainel extends JPanel{
     JPanel container;
     CardLayout layout;
 
-    public ExibirTopObrasPainel(JPanel container, CardLayout layout, IArtGallery galeria){
-        this.container = container;
+    public ExibirTopObrasPainel(JPanel conteiner, CardLayout layout, IArtGallery galeria){
+        this.container = conteiner;
         this.layout = layout;
         this.galeria = galeria;
 
         this.botaoVoltar = new JButton("Voltar");
-        botaoVoltar.addActionListener(e -> layout.show(container, "Menu Principal"));
+        botaoVoltar.addActionListener(e -> layout.show(conteiner, "Menu Principal"));
 
         setLayout(new GridBagLayout());
 

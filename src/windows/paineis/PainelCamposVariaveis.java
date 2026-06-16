@@ -14,7 +14,7 @@ public class PainelCamposVariaveis extends JPanel {
     private JTextField primeiroCampo;
     private JTextField segundoCampo;
 
-    public PainelCamposVariaveis(JPanel container, CardLayout layout, String campo1, String campo2){
+    public PainelCamposVariaveis(JPanel conteiner, CardLayout layout, String campo1, String campo2){
         JLabel labelPrimeiro = new JLabel(campo1 + ": ");
         primeiroCampo = new JTextField(60);
         JLabel labelSegundo = new JLabel(campo2 + ": ");

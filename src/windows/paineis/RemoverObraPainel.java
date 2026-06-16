@@ -18,7 +18,7 @@ public class RemoverObraPainel extends JPanel{
     private JLabel mensagemAviso = new JLabel("");
     private IArtGallery galeria;
 
-    public RemoverObraPainel(JPanel container, CardLayout layout, IArtGallery galeria){
+    public RemoverObraPainel(JPanel conteiner, CardLayout layout, IArtGallery galeria){
         this.galeria = galeria;
         JLabel labelTitulo = new JLabel("Titulo: ");
         JTextField campoTitulo = new JTextField(60);
@@ -30,7 +30,7 @@ public class RemoverObraPainel extends JPanel{
         botaoRemover.addActionListener(e -> this.RemoverObra(campoTitulo.getText(), campoAutor.getText()));
 
         JButton botaoVoltar = new JButton("Voltar");
-        botaoVoltar.addActionListener(e -> layout.show(container, "Menu Principal"));
+        botaoVoltar.addActionListener(e -> layout.show(conteiner, "Menu Principal"));
 
         JPanel botoes = new JPanel();
         botoes.add(botaoVoltar);
