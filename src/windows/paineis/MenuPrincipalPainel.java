@@ -33,6 +33,8 @@ public class MenuPrincipalPainel extends JPanel{
         JButton botaoCriarExposicao = new JButton("Criar Exposição");
         botaoCriarExposicao.addActionListener(e -> layout.show(conteiner, "Criar Exposição"));
 
+        JButton botaoExporObras = new JButton("Expor Obras");
+        botaoExporObras.addActionListener(e -> layout.show(conteiner, "Expor Obras"));
 
 
         setLayout(new GridBagLayout());
@@ -61,5 +63,8 @@ public class MenuPrincipalPainel extends JPanel{
 
         gbc.gridy = 6;
         add(botaoCriarExposicao, gbc);
+
+        gbc.gridy = 7;
+        add(botaoExporObras, gbc);
     }
 }

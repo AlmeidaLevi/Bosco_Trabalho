@@ -9,6 +9,7 @@ import src.interfaces.IArtGallery;
 import src.windows.paineis.AvaliarObraPainel;
 import src.windows.paineis.BuscarObrasPorAutorPainel;
 import src.windows.paineis.ExibirTopObrasPainel;
+import src.windows.paineis.ExporObrasPainel;
 import src.windows.paineis.ListarObrasPainel;
 import src.windows.paineis.MenuPrincipalPainel;
 import src.windows.paineis.PublicarObraPainel;
@@ -29,6 +30,7 @@ public class MainWindow extends JFrame{
         conteiner.add(new BuscarObrasPorAutorPainel(conteiner, layout, galeria), "Buscar obras por autor");
         conteiner.add(new ExibirTopObrasPainel(conteiner, layout, galeria), "Exibir TOP obras");
         conteiner.add(new CriarExposicaoPainel(conteiner, layout, galeria), "Criar Exposição");
+        conteiner.add(new ExporObrasPainel(conteiner, layout, galeria), "Expor Obras");
 
         add(conteiner);
 
