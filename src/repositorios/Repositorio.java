@@ -18,42 +18,39 @@ public class Repositorio implements IRepositorioObra{
             this.obras.add(obra);
             return;
         }
+
+        // Verificando se a obra existe
         for (Obra o: buscarObra){
             if (o.getAutor().equals(obra.getAutor())) {
-                throw new ObraJaCadastradaException("A obra " + obra.getTitulo() + " do " + obra.getAutor() + "já foi cadastrada!!\n");
+                throw new ObraJaCadastradaException("A obra " + obra.getTitulo() + " do " + obra.getAutor() + " já foi cadastrada!!\n");
             }
         }
+
         this.obras.add(obra);
     }
 
     @Override
     public Vector<Obra> buscar(String titulo){
         Vector<Obra> obrasEncontradas = new Vector<>();
-        for (Obra obra : obras){
+        // Pegando todas as obras com o mesmo titulo
+        for (Obra obra : this.obras){
             if(obra.getTitulo().equals(titulo)){
                 obrasEncontradas.add(obra);
             }
         }
+
+        // Retornando null caso não haja obra com o titulo
         if (obrasEncontradas.isEmpty()){
             return null;
         }
+
         return obrasEncontradas;
     }
 
     @Override
     public void atualizar(Obra obra) throws ObraNaoEncontradaException{
-        Vector<Obra> buscarObra = this.buscar(obra.getTitulo());
-        if (buscarObra == null){
-            throw new ObraNaoEncontradaException("A obra " + obra.getTitulo() + " do " + obra.getAutor() + " não foi encontrada!!");
-        }
-        int indice = -1;
-        for(Obra o : buscarObra){
-            if(o.getAutor().equals(obra.getAutor()) && o.getTitulo().equals(obra.getTitulo()))
-                indice = this.obras.indexOf(o);
-        }
-        if(indice == -1){
-            throw new ObraNaoEncontradaException("A obra " + obra.getTitulo() + " do " + obra.getAutor() + " não foi encontrada!!");
-        }
+        Obra buscarObra = this.buscarObra(obra.getTitulo(), obra.getAutor());
+        int indice = this.obras.indexOf(buscarObra);
         this.obras.set(indice, obra);
     }
 
@@ -91,6 +88,9 @@ public class Repositorio implements IRepositorioObra{
     @Override
     public Obra buscarObra(String titulo, String autor) throws ObraNaoEncontradaException{
         Vector<Obra> obrasEncontradas = this.buscar(titulo);
+        if(obrasEncontradas == null){
+            throw new ObraNaoEncontradaException("A obra " + titulo + " do " + autor + " não foi encontrada!!");
+        }
         for(Obra o: obrasEncontradas){
             if(o.getAutor().equals(autor)){
                 return o;

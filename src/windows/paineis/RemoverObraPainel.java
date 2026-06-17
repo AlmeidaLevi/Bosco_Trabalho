@@ -72,7 +72,7 @@ public class RemoverObraPainel extends JPanel{
             this.mensagemAviso.setText("A obra foi removida com sucesso!");
             this.mensagemAviso.setForeground(Color.GREEN);
         } catch( ObraNaoEncontradaException e){
-            this.mensagemAviso.setText("A obra não foi encontrada, verifique se o titulo e o autor estão corretos!");
+            this.mensagemAviso.setText(e.getMessage());
             this.mensagemAviso.setForeground(Color.RED);
         }
     }

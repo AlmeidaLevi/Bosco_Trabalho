@@ -59,12 +59,7 @@ public class AvaliarObraPainel extends JPanel {
         this.campoUsuario = new JTextField(60);
 
         this.labelNota = new JLabel("Nota da obra: ");
-        this.modeloNota = new SpinnerNumberModel(
-            1,   // valor inicial
-            1,   // mínimo
-            10,  // máximo
-            1    // incremento
-        );
+        this.modeloNota = new SpinnerNumberModel(1, 1, 10, 1);
 
         this.campoNota = new JSpinner(this.modeloNota);
         JSpinner.DefaultEditor editor = (JSpinner.DefaultEditor) campoNota.getEditor();
@@ -147,6 +142,7 @@ public class AvaliarObraPainel extends JPanel {
             return;
         }
 
+        // Criando a avaliação
         Avaliacao avaliacao = new Avaliacao(usuario, nota, comentario);
 
         try{
@@ -154,7 +150,7 @@ public class AvaliarObraPainel extends JPanel {
             this.mensagemAviso.setText("Obra avaliada com sucesso!!");
             this.mensagemAviso.setForeground(Color.GREEN);
         } catch (ObraNaoEncontradaException | NullPointerException e) {
-            this.mensagemAviso.setText("Obra " + textoTitulo + " do autor " + textoAutor + " não encontrada!!!" + e.getMessage());
+            this.mensagemAviso.setText("Obra " + textoTitulo + " do autor " + textoAutor + " não encontrada!!!");
             this.mensagemAviso.setForeground(Color.RED);
         }
 

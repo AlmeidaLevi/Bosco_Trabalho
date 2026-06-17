@@ -213,7 +213,7 @@ public class PublicarObraPainel extends JPanel{
             this.mensagemAviso.setForeground(Color.GREEN);
 
         } catch (ObraJaCadastradaException exception) {
-            mensagemAviso.setText("OBRA JÁ FOI CADASTRADA ANTERIORMENTE!!!!!!");
+            mensagemAviso.setText(exception.getMessage());
             this.mensagemAviso.setForeground(Color.RED);
         }
   }

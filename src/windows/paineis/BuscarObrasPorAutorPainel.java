@@ -26,8 +26,6 @@ public class BuscarObrasPorAutorPainel extends JPanel{
     private JLabel mensagemAviso;
     private JPanel painelObras;
 
-
-
     public BuscarObrasPorAutorPainel(JPanel conteiner, CardLayout layout, IArtGallery galeria){
         this.galeria = galeria;
 
@@ -72,24 +70,31 @@ public class BuscarObrasPorAutorPainel extends JPanel{
     }
 
     public void buscar(){
+        // Removendo a mensagem de aviso anterior
         this.mensagemAviso.setText("");
+
+        // Removendo todas as obras da buscar anterior para poder adicionar as obras da nova busca
         this.painelObras.removeAll();
+
         Vector<Obra> obrasDoAutor = galeria.buscarPorAutor(this.campoAutor.getText());
 
         if(obrasDoAutor.isEmpty()){
             this.mensagemAviso.setText("Nenhuma obra encontrada.");
             this.mensagemAviso.setForeground(Color.RED);
         }
+
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
 
         gbc.gridx = 0;
         gbc.gridy = 0;
+
         for(Obra obra : obrasDoAutor){
             JTextArea textoObra = new JTextArea(obra.exibirDetalhes());
             textoObra.setEditable(false);
             this.painelObras.add(textoObra, gbc);
 
+            // Só 5 obras por linha
             gbc.gridx += 1;
             if(gbc.gridx > 4){
                 gbc.gridx = 0;
@@ -97,6 +102,8 @@ public class BuscarObrasPorAutorPainel extends JPanel{
             }
 
         }
+
+        // Atualizando o painel obra
         this.painelObras.revalidate();
         this.painelObras.repaint();
     }
